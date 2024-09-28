@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  h2 Welcome to #{title}
+  
+  p Here you can explore a vast collection of music across various genres and artists.
+  
+  // List of songs
+  ul
+    each song in songs
+      li
+        h3= song.name
+        p Artist: #{song.artist}
+        p Album: #{song.album}
+        p Genre: #{song.genre.join(', ')}
+        p Duration: #{song.duration}
+        p Rating: #{song.rating} / 5
+
+  // Sidebar or additional information
+  aside
+    h4 Mana Music - Stream, Discover, Enjoy
+    p #{sidebar}

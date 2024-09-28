@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  .row.page-header(style="margin-bottom: 20px;") // Adjust margin-bottom to move the header down
+    .col-lg-12
+      h1(style="margin-top: 20px;") My Music Stream // Title of the platform
+
+  .row
+    .col-xs-12.col-md-9
+      .row
+        .col-xs-12
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Now Playing
+            .panel-body
+              p.song-title Song Title Here
+              p.artist Artist Name Here
+              .player
+                audio.controls
+                  source(src="path/to/your/audio/file.mp3", type="audio/mpeg")
+                  | Your browser does not support the audio tag.
+        
+        .col-xs-12
+          .panel.panel-primary
+            .panel-heading
+              h2.panel-title Playlists
+            .panel-body
+              ul.playlists
+                li Playlist 1
+                li Playlist 2
+                li Playlist 3
+
+        .col-xs-12
+          .panel.panel-primary.review-panel
+            .panel-heading
+              a.btn.btn-default.pull-right(href='/music/review/new') Add review
+              h2.panel-title User Reviews
+            .panel-body.review-container
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                    span.reviewAuthor Alice
+                    small.reviewTimestamp 20 August 2023
+                  .col-xs-12
+                    p Love this platform! The playlists are fantastic.
+              .row
+                .review
+                  .well.well-sm.review-header
+                    span.rating
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star
+                      span.glyphicon.glyphicon-star-empty
+                      span.glyphicon.glyphicon-star-empty
+                    span.reviewAuthor Bob
+                    small.reviewTimestamp 18 August 2023
+                  .col-xs-12
+                    p It's good, but I wish there were more genres available.
+    
+    .col-xs-12.col-md-3
+      p.lead
+        | Welcome to My Music Stream! Enjoy a wide variety of music and playlists tailored for every mood.
+      p
+        | If you like our service, please leave a review to help others discover great music.
